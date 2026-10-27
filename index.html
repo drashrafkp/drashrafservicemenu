@@ -1,0 +1,435 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1e293b;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Container setup for web preview & printing */
+.flyer-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  background: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media print {
+  body {
+    background-color: #ffffff;
+  }
+  .flyer-wrapper {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+.flyer-content {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header Banner */
+.header-banner {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clinic-title {
+  margin: 0;
+  font-size: 20pt;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.clinic-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 11pt;
+  color: #e0f2fe;
+  font-weight: 500;
+}
+
+.header-badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 8.5pt;
+  line-height: 1.3;
+}
+
+.header-badge strong {
+  font-size: 10pt;
+  display: block;
+  color: #ffffff;
+}
+
+/* Doctor Profile Section */
+.doctor-strip {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-left: 5px solid #0284c7;
+  border-radius: 10px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.doctor-photo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0284c7;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.doctor-info {
+  flex: 1;
+}
+
+.doctor-info h2 {
+  margin: 0;
+  font-size: 15pt;
+  color: #0c4a6e;
+  font-weight: 800;
+}
+
+.doctor-info p {
+  margin: 2px 0 0 0;
+  font-size: 10.5pt;
+  color: #0369a1;
+  font-weight: 700;
+}
+
+.doctor-subtext {
+  margin-top: 3px;
+  font-size: 9pt;
+  color: #475569;
+}
+
+.tagline-badge {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Services Grid */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.service-card {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 14px 16px;
+}
+
+.service-card.primary-accent { border-top: 4px solid #0284c7; }
+.service-card.secondary-accent { border-top: 4px solid #0d9488; }
+.service-card.warning-accent { border-top: 4px solid #e11d48; }
+.service-card.purple-accent { border-top: 4px solid #7c3aed; }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 11.5pt;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.service-list {
+  margin: 0;
+  padding: 0 0 0 16px;
+  font-size: 9pt;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.service-list li {
+  margin-bottom: 6px;
+}
+
+.service-list li:last-child {
+  margin-bottom: 0;
+}
+
+.service-list li strong {
+  color: #0f172a;
+}
+
+/* Emergency Callout Box */
+.emergency-box {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-left: 5px solid #e11d48;
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emergency-text h4 {
+  margin: 0;
+  font-size: 11pt;
+  color: #9f1239;
+  font-weight: 700;
+}
+
+.emergency-text p {
+  margin: 2px 0 0 0;
+  font-size: 9pt;
+  color: #be123c;
+}
+
+.emergency-phone {
+  font-size: 12.5pt;
+  font-weight: 800;
+  color: #9f1239;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #fda4af;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Schedule Bar */
+.schedule-bar {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  font-size: 8.5pt;
+  color: #475569;
+}
+
+.schedule-item {
+  text-align: center;
+  padding: 0 4px;
+}
+
+.schedule-item:not(:last-child) {
+  border-right: 1px solid #e2e8f0;
+}
+
+.schedule-item strong {
+  display: block;
+  color: #0f172a;
+  font-size: 9pt;
+  margin-bottom: 3px;
+}
+
+.schedule-item .time {
+  color: #0284c7;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.schedule-item .phone {
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Footer */
+.flyer-footer {
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 8.5pt;
+  color: #64748b;
+}
+
+@media screen and (max-width: 640px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+  }
+  .schedule-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .schedule-item:nth-child(2) {
+    border-right: none;
+  }
+  .emergency-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+
+  <!-- Clinic Header Masthead -->
+  <header class="header-banner">
+    <div>
+      <h1 class="clinic-title">Pediatric &amp; Neonatology Care</h1>
+      <div class="clinic-subtitle">Comprehensive Child &amp; Newborn Healthcare Services</div>
+    </div>
+    <div class="header-badge">
+      <strong>Specialized Care</strong>
+      From Birth to 18 Years
+    </div>
+  </header>
+
+  <!-- Doctor Credentials Strip -->
+  <section class="doctor-strip">
+    <img src="https://lh3.googleusercontent.com/gg-dl/AHiVA1mOZwDTw4NRomYU_glxaKpF_9i8pb-DndhoKxIujva9tRTRCWkk3tsjJxn8Sg_QjIz_X8AqemYbHJyBw2mbEoRkpxElaEZqY7wjPYWxx3MGfwSfHS1SwrkBpwbA7Uh7pehk7U-oeJqZP4mLxeqJgljtJtF2YFRGV-9rVoStPXq0QkB3_w" alt="Dr. K P Ashraf" class="doctor-photo">
+    <div class="doctor-info">
+      <h2>DR K P ASHRAF</h2>
+      <p>MBBS, MD (Pediatrics)</p>
+      <div class="doctor-subtext">Senior Consultant Pediatrician &amp; Neonatologist</div>
+    </div>
+    <div class="tagline-badge">Kannur, Kerala</div>
+  </section>
+
+  <!-- Main Services Grid -->
+  <main class="grid-2col">
+    
+    <!-- Neonatology Card -->
+    <article class="service-card primary-accent">
+      <div class="card-header">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9z"></path><circle cx="12" cy="7" r="3"></circle></svg>
+        <h3>Newborn &amp; Neonatal Care (NICU)</h3>
+      </div>
+      <ul class="service-list">
+        <li><strong>High-Risk &amp; Preemie Care:</strong> Specialized medical care for premature &amp; low birth-weight babies.</li>
+        <li><strong>NICU Critical Care:</strong> Mechanical ventilation, CPAP support, &amp; vital monitoring.</li>
+        <li><strong>Jaundice &amp; Phototherapy:</strong> Screening &amp; phototherapy for neonatal jaundice.</li>
+        <li><strong>Delivery Attendance:</strong> Attendance at high-risk births &amp; emergency resuscitation.</li>
+        <li><strong>Neonatal Screening:</strong> Routine hearing tests, CCHD, &amp; metabolic screening.</li>
+        <li><strong>Developmental Follow-Up:</strong> Long-term physical &amp; cognitive monitoring for preemies.</li>
+      </ul>
+    </article>
+
+    <!-- General Pediatrics Card -->
+    <article class="service-card secondary-accent">
+      <div class="card-header">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <h3>General Pediatric Healthcare</h3>
+      </div>
+      <ul class="service-list">
+        <li><strong>Well-Child Checkups:</strong> Physical examinations &amp; growth milestone assessments.</li>
+        <li><strong>Vaccinations &amp; Immunizations:</strong> Complete schedules per national guidelines.</li>
+        <li><strong>Acute Illness Care:</strong> Treatment for fevers, colds, flu, ear &amp; stomach infections.</li>
+        <li><strong>Nutrition &amp; Lactation Counseling:</strong> Breastfeeding support, solid foods, &amp; weight management.</li>
+        <li><strong>Allergy &amp; Asthma Management:</strong> Care for childhood asthma, eczema, &amp; allergies.</li>
+        <li><strong>Adolescent Healthcare:</strong> Guidance on teenage growth, nutrition, &amp; wellness.</li>
+      </ul>
+    </article>
+
+    <!-- Emergency & Inpatient Card -->
+    <article class="service-card warning-accent">
+      <div class="card-header">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+        <h3>Emergency &amp; Inpatient Care</h3>
+      </div>
+      <ul class="service-list">
+        <li><strong>24/7 Acute Care:</strong> Emergency evaluation for high fevers, respiratory distress, &amp; dehydration.</li>
+        <li><strong>Inpatient Hospitalization:</strong> Comprehensive hospital care for severe pediatric illnesses.</li>
+        <li><strong>Minor Procedures:</strong> Nebulization therapy, wound dressing, &amp; IV management.</li>
+      </ul>
+    </article>
+
+    <!-- Specialized Clinics Card -->
+    <article class="service-card purple-accent">
+      <div class="card-header">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+        <h3>Specialized Consultations</h3>
+      </div>
+      <ul class="service-list">
+        <li><strong>Developmental Evaluation:</strong> Early screening for speech, behavior, &amp; learning delays.</li>
+        <li><strong>Antenatal Counseling:</strong> Pre-birth consultations for high-risk pregnancies.</li>
+        <li><strong>Teleconsultations:</strong> Virtual consultations for follow-ups &amp; medical advice.</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <!-- Emergency Contact Banner -->
+  <section class="emergency-box">
+    <div class="emergency-text">
+      <h4>24/7 Emergency Medical Support</h4>
+      <p>Prompt consultation &amp; emergency admission available across primary centers in Kannur.</p>
+    </div>
+    <div class="emergency-phone">
+      📞 0497 2715550
+    </div>
+  </section>
+
+  <!-- Consultation Schedule -->
+  <section class="schedule-bar">
+    <div class="schedule-item">
+      <strong>KIMS Sreechand</strong>
+      <div class="time">7:30 AM – 1:30 PM</div>
+      <div class="phone">0497 2715550</div>
+    </div>
+    <div class="schedule-item">
+      <strong>Fathima Hospital</strong>
+      <div class="time">2:30 PM – 4:30 PM</div>
+      <div class="phone">62628 88000</div>
+    </div>
+    <div class="schedule-item">
+      <strong>Medister Clinic</strong>
+      <div class="time">4:30 PM – 7:30 PM</div>
+      <div class="phone">82812 92177</div>
+    </div>
+    <div class="schedule-item">
+      <strong>Crescent Hospital</strong>
+      <div class="time">7:30 PM – 8:30 PM</div>
+      <div class="phone">79076 08759</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="flyer-footer">
+    <span>Dr. K P Ashraf — MBBS, MD (Pediatrics)</span>
+    <span>Kannur, Kerala, India</span>
+  </footer>
+
+</div>
